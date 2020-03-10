@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset='utf-8'>
+        <title>Teste Thèos</title>
+		<link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel='stylesheet' type='text/css' href='css/default.css'>
+        <link rel='stylesheet' type='text/css' href='css/index.css'>
+    </head>
+    <body>
+        
+        <input type="hidden" id="hidden-occupation-id" value="">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ion-icon name="medkit-outline" class="icon-h1"></ion-icon>
+                    <h1 class="inline-block">Cadastro de Profissão</h1>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group btn-group-sm float-right">
+                        <button class="btn btn-primary" id="btn-new" title="Novo">
+                            <ion-icon name="add-outline" class="icon-btn"></ion-icon>
+                            Novo
+                        </button>
+                        <button class="btn btn-info" id="btn-search" title="Buscar">
+                            <ion-icon name="search-outline" class="icon-btn"></ion-icon>
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+            </div> <!-- h1 -->
+            <div class="row">
+                <div class="col-md-3 div-label-input">
+                    <label for="input-name" class="cursor-pointer class-bold">Nome*</label>
+                    <input type="text" class="form-control form-control-sm field-require" id="input-name" title="Nome" maxlength="50">
+                </div>
+                <div class="col-md-3 div-label-input">
+                    <label for="input-lastname" class="cursor-pointer class-bold">Sobrenome*</label>
+                    <input type="text" class="form-control form-control-sm field-require" id="input-lastname" title="Sobrenome" maxlength="50">
+                </div>
+                <div class="col-md-6 div-label-input">
+                    <label for="input-email" class="cursor-pointer class-bold">E-mail*</label>
+                    <input type="text" class="form-control form-control-sm field-require" id="input-email" title="E-mail" maxlength="50">
+                </div>
+            </div> <!-- row name, lastname and email -->
+            <div class="row">
+                <div class="col-md-3 div-label-input">
+                    <label for="select-gender" class="cursor-pointer class-bold">Sexo</label>
+                    <select class="form-control form-control-sm" id="select-gender" title="Sexo">
+                        <option value="null" selected>Não declarar</option>
+                        <option value="m">Masculino</option>
+                        <option value="f">Feminino</option>
+                    </select>
+                </div>
+                <div class="col-md-3 div-label-input">
+                    <label for="input-date" class="cursor-pointer class-bold">Data</label>
+                    <input type="text" class="form-control form-control-sm field-require" id="input-date" title="Data" readonly>
+                </div>
+                <div class="col-md-3 div-label-input">
+                    <label for="select-state" class="cursor-pointer class-bold">Estado</label>
+                    <select class="form-control form-control-sm" id="select-state" title="Estado">
+                        <option value="null" selected disabled>Selecionar</option>
+                        <option value="pr">Paraná</option>
+                        <option value="sp">São Paulo</option>
+                    </select>
+                </div>
+                <div class="col-md-3 div-label-input">
+                    <label for="select-city" class="cursor-pointer class-bold">Cidade</label>
+                    <select class="form-control form-control-sm" id="select-city" title="Cidade" disabled>
+                        <option value="null" selected disabled>Selecionar</option>
+                    </select>
+                </div>
+            </div> <!-- row gender, date, city and state -->
+            <div class="row">
+                <div class="col-md-6 div-label-input">
+                    <label for="select-occupation" class="cursor-pointer class-bold">Profissão*</label>
+                    <select class="form-control form-control-sm field-require" id="select-occupation" title="Profissão">
+                        <option value="null" selected disabled>Selecionar</option>
+                        <option value="1">Carpinteiro</option>
+                        <option value="2">Programador</option>
+                        <option value="3">Engenheiro</option>
+                        <option value="4">Médico</option>
+                        <option value="5">Eletricista</option>
+                    </select>
+                </div>
+                <div class="col-md-6 div-label-input">
+                    <label for="input-training-area" class="cursor-pointer class-bold">Área de Formação*</label>
+                    <input type="text" class="form-control form-control-sm field-require" id="input-training-area" title="Área de Formação" maxlength="100">
+                </div>
+            </div> <!-- row training area and occupation -->
+        </div> <!-- body container -->
+
+    </body>
+
+    <footer>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group btn-group-sm hide">
+                        <button class="btn btn-danger" id="btn-delete" title="Excluir">
+                            <ion-icon name="trash-outline" class="icon-btn"></ion-icon>
+                            Excluir
+                        </button>
+                    </div>
+                    <div class="btn-group btn-group-sm float-right">
+                        <button class="btn btn-success" id="btn-save" title="Salvar">
+                            <ion-icon name="save-outline" class="icon-btn"></ion-icon>
+                            Salvar
+                        </button>
+                    </div>
+                    <div class="btn-group btn-group-sm float-right hide">
+                        <button class="btn btn-warning" id="btn-alter" title="Alterar">
+                            <ion-icon name="pencil-outline" class="icon-btn"></ion-icon>
+                            Alterar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- footer container -->
+
+    </footer>
+
+    <div class="modal-loading"></div>
+
+    <div class="modal fade bd-example-modal-lg" id="modal-filter" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Buscar Profissão</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8 div-label-input">
+                            <label for="input-name-modal" class="cursor-pointer class-bold">Nome Completo</label>
+                            <input type="text" class="form-control form-control-sm" id="input-name-modal" title="Nome" maxlength="50">
+                        </div>
+                        <div class="col-md-4 div-label-input">
+                            <label for="select-occupation-modal" class="cursor-pointer class-bold">Profissão</label>
+                            <select class="form-control form-control-sm" id="select-occupation-modal" title="Profissão">
+                                <option value="null" selected disabled>Selecionar</option>
+                                <option value="1">Carpinteiro</option>
+                                <option value="2">Programador</option>
+                                <option value="3">Engenheiro</option>
+                                <option value="4">Médico</option>
+                                <option value="5">Eletricista</option>
+                            </select>
+                        </div>
+                    </div> <!-- row filter -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-group btn-group-sm float-right">
+                                <button class="btn btn-info" id="btn-filter" title="Buscar">
+                                    <ion-icon name="search-outline" class="icon-btn"></ion-icon>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- btn filter -->
+                    <div class="row hide" id="div-table-occupation">
+                        <div class="col-md-12">
+                            <table class="table table-bordered table-hover table-responsive-lg" id="table-occupation">
+                                <thead>
+                                    <tr>
+                                        <th class="align-center">Nome</th>
+                                        <th class="align-center">email</th>
+                                        <th class="align-center">Cidade/UF</th>
+                                        <th class="align-center">Profissão</th>
+                                        <th class="align-center">Área de Formação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5">Nenhum registro encontrado!</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- btn filter -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="lib/notify.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/index.js"></script>
+</html>

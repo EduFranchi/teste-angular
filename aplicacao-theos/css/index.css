@@ -1,0 +1,24 @@
+body .container {
+    background-color: white;
+    padding: 50px 50px 25px 50px;
+    border-radius: 10px 10px 0px 0px;
+    
+    -webkit-box-shadow: -5px 5px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    -5px 5px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         -5px 5px 5px rgba(50, 50, 50, 0.77);
+}
+footer .container {
+    background-color: white;
+    padding: 0px 50px 50px 50px;
+    border-radius: 0px 0px 10px 10px;
+    
+    -webkit-box-shadow: -5px 5px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    -5px 5px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         -5px 5px 5px rgba(50, 50, 50, 0.77);
+}
+#div-table-occupation {
+    margin-top: 20px;
+}
+#div-table-occupation td:hover {
+    cursor: pointer;
+}

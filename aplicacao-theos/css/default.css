@@ -1,0 +1,72 @@
+body {
+    background-color: #008C9F;
+    padding-top: 100px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.icon-h1 {
+    font-size: 2.5rem;
+    margin-bottom: -3px;
+}
+.inline-block {
+    display: inline-block;
+}
+.class-bold {
+    font-weight: 600;
+}
+.div-label-input {
+    margin-bottom: 10px;;
+}
+.div-label-input label {
+    margin-bottom: 0px;;
+}
+.icon-btn {
+    font-size: 15px;
+    margin-bottom: -1.5px;
+    font-weight: 600;
+}
+
+.modal-loading {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 0, 0, 0, 0.7 ) 
+                url("../img/loading.gif") 
+                50% 50% 
+                no-repeat;
+}
+body.loading {
+    overflow: hidden;
+}
+body.loading .modal-loading  {
+    display: block;
+    z-index: 1100;
+}
+body.loading-dark {
+    overflow: hidden;
+}
+body.loading-dark .modal-loading  {
+    display: block;
+    background: rgba( 0, 0, 0, 1 ) 
+                url("../img/loading.gif") 
+                50% 50% 
+                no-repeat !important;
+}
+.align-center {
+    text-align: center;
+}
+.table th {
+    background-color: #F3F3F3;
+}
+.table th,
+.table td {
+    vertical-align: middle !important;
+}
+.hide {
+    display: none;
+}
